@@ -10,7 +10,7 @@ A repository implementing basic algorithms in Haskell.
   - [Stack](./data_structure/stack_/)
   - [Hash Table](./data_structure/hash/)
   - [Tree](./data_structure/tree/)
-    - [Set(balanced binary tree)](./data_structure/Set.hs): Set is balanced binary tree, with reference to [Functional Pearls Efficient sets—a balancing act](https://www.cambridge.org/core/journals/journal-of-functional-programming/article/functional-pearls-efficient-setsa-balancing-act/0CAA1C189B4F7C15CE9B8C02D0D4B54E) and [Haskell Data.Set.Internal](https://hackage-content.haskell.org/package/containers-0.8/docs/src/Data.Set.Internal.html)
+    - [Set(balanced binary tree)](./data_structure/tree/Set.hs): Set is balanced binary tree, with reference to [Functional Pearls Efficient sets—a balancing act](https://www.cambridge.org/core/journals/journal-of-functional-programming/article/functional-pearls-efficient-setsa-balancing-act/0CAA1C189B4F7C15CE9B8C02D0D4B54E) and [Haskell Data.Set.Internal](https://hackage-content.haskell.org/package/containers-0.8/docs/src/Data.Set.Internal.html)
 - [Search](./search/README.md)
   - [Linear Search](./search/linear_search/)
   - [Binary Search](./search/binary_search/)
