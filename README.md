@@ -25,8 +25,9 @@ A repository implementing basic algorithms in Haskell.
   - [Shell Sort](./sort/shell_sort/)
   - [Counting Sort](./sort/counting_sort/)
 - [Math](./math/README.md)
-  - [Euclidean Algorithm](./math/euclidean/)
+  - [Euclidean Algorithm](./math/euclidean/): GCD(Greatest Common Divisor), LCM(Least Common Multiple)
   - [prime number](./math/prime_number/)
+    - 
   - [Fermat's Little Theorem](./math/fermat/)
   - [Fibonacci](./math/fibonacci/)
   - [Pi Approximation](./math/pi.hs)
@@ -42,6 +43,8 @@ A repository implementing basic algorithms in Haskell.
 - [Nix Flake](https://nixos.wiki/wiki/Flakes)
 - [Haskell](https://www.haskell.org/)
   - [GHC](https://www.haskell.org/ghc/)
+
+In detail, see [flake.nix](./flake.nix).
 
 ---
 

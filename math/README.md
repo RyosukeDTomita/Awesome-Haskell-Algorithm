@@ -6,9 +6,9 @@
 
 ---
 
-## エラトステネスのふるい
+## 素数関連アルゴリズム
 
-[eratosthenes](./prime_number/)
+[prime_number](./prime_number/)
 
 ---
 
