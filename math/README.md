@@ -2,7 +2,7 @@
 
 ## ユークリッドの互助法
 
-[euclidean](./euclidean/)
+[euclidean](./euclidean.hs)
 
 ---
 
@@ -19,7 +19,7 @@
 a^(p-1) ≡ 1 (mod p) であることから、
 a * a^(p-2) ≡ 1 (mod p) となり、a^(p-2) が a の法的逆元となる。
 
-[fermat](./fermat/)
+[fermat](./fermat.hs)
 
 ---
 

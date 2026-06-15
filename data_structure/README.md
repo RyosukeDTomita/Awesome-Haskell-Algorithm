@@ -46,4 +46,4 @@
 
 ### BST(Binary Search Tree)
 
-[../search/bst/](../search/bst/)に二分木探索を実装した。
+[../search/bst.hs](../search/bst.hs)に二分木探索を実装した。
