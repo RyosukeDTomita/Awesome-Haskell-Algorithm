@@ -15,6 +15,7 @@ A repository implementing basic algorithms in Haskell.
   - [Linear Search](./search/linear_search/)
   - [Binary Search](./search/binary_search/)
   - [Binary Search Tree (BST)](./search/bst.hs)
+  - [Bit Search](./search/bitSearch.hs)
   - [Depth First Search](./search/depthFirstSearch.hs)
 - [Sort](./sort/README.md)
   - [Bubble Sort](./sort/bubbleSort.hs)
@@ -54,4 +55,3 @@ In detail, see [flake.nix](./flake.nix).
 - [Learn You a Haskell for Great Good! (翻訳: すごいHaskell楽しく学ぼう!)](https://www.ohmsha.co.jp/book/9784274068850/)
 
 ---
-
