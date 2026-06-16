@@ -1,6 +1,6 @@
 ![icon](./assets/icon-haskell.png)
 
-![mit license](https://img.shields.io/github/license/RyosukeDTomita/basic_algorithm)
+![mit license](https://img.shields.io/github/license/RyosukeDTomita/Awesome-Haskell-Algorithm)
 
 A repository implementing basic algorithms in Haskell.
 
