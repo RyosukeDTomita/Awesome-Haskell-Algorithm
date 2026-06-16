@@ -2,22 +2,22 @@ import Data.List (find)
 
 data Tree a = Node a [Tree a] deriving (Show) -- 型コンストラクタとしてTreeをデータコンストラクタとしてNodeを作成
 
--- 葉ノード（子を持たないノード）を作成
+-- | 葉ノード（子を持たないノード）を作成
 leaf :: a -> Tree a
 leaf x = Node x []
 
--- ルートの値を取得
+-- | ルートの値を取得
 rootValue :: Tree a -> a
 rootValue (Node x _) = x
 
--- 特定の値を持つノードの子として新しい値を挿入
+-- | 特定の値を持つノードの子として新しい値を挿入。
 -- 見つからない場合は元の木を返す
 insertAt :: (Eq a) => a -> a -> Tree a -> Tree a
 insertAt target newVal (Node x children)
   | x == target = Node x (leaf newVal : children)
   | otherwise = Node x (map (insertAt target newVal) children) -- mapするのはすべての子要素について調査するため
 
--- 特定の値を持つノードを削除（子ノードは親に昇格）
+-- | 特定の値を持つノードを削除（子ノードは親に昇格）
 -- ルートノードは削除できない
 delete :: (Eq a) => a -> Tree a -> Tree a
 delete target (Node x children) = Node x (concatMap (deleteHelper target) children)
@@ -27,20 +27,20 @@ delete target (Node x children) = Node x (concatMap (deleteHelper target) childr
       | v == t = children' -- このノードを削除し、子を昇格
       | otherwise = [Node v (concatMap (deleteHelper t) children')]
 
--- 木に特定の値が含まれているか検索
+-- | 木に特定の値が含まれているか検索
 contains :: (Eq a) => a -> Tree a -> Bool
 contains target (Node x children) = x == target || any (contains target) children
 
--- 木のサイズ（ノード数）を取得
+-- | 木のサイズ（ノード数）を取得
 size :: Tree a -> Int
 size (Node _ children) = 1 + sum (map size children)
 
--- 木の深さを取得
+-- | 木の深さを取得
 depth :: Tree a -> Int
 depth (Node _ []) = 1
 depth (Node _ children) = 1 + maximum (map depth children)
 
--- ある要素から見た親を探す
+-- | ある要素から見た親を探す
 findParent :: (Eq a, Num a) => Tree a -> a -> a
 findParent (Node x children) v
   | v `elem` map rootValue children = x
@@ -53,7 +53,7 @@ findParent (Node x children) v
         (-1)
         children
 
--- 木を整形して表示（枝を使って階層構造を明確化）
+-- | 木を整形して表示（枝を使って階層構造を明確化）
 prettyPrint :: (Show a) => Tree a -> String
 prettyPrint tree = go "" "" tree
   where
