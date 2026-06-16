@@ -1,4 +1,4 @@
--- NOTE: pivotは雑に左端から選択している
+-- | pivotは雑に左端から選択している
 quickSort :: (Ord a) => [a] -> [a]
 quickSort [] = []
 quickSort (x : xs) = quickSort left ++ [x] ++ quickSort right

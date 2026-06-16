@@ -1,3 +1,5 @@
+{-# OPTIONS_GHC -Wno-x-partial #-}
+
 linearSearch :: [Int] -> Int -> Int
 linearSearch xs target =
   head

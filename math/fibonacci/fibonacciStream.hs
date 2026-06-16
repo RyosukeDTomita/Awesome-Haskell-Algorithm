@@ -1,5 +1,5 @@
+-- | 今回の状態と次回の状態を引き回してフィボナッチ数列作成
 fibSeq :: Int -> [Int]
--- (cur, next) = (F(n), F(n+1)) を持ち越し、次は (next, cur + next) = (F(n+1), F(n+2))
 fibSeq n = map fst $ take n $ iterate (\(cur, next) -> (next, cur + next)) (0, 1)
 
 main :: IO ()

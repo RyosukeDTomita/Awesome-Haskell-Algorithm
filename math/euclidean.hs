@@ -1,11 +1,11 @@
--- ユークリッドの互助法
+-- | ユークリッドの互助法を使って最大公約数を求める
 gcd' :: Int -> Int -> Int
 gcd' a b
   | a < 0 || b < 0 = error "gcd': negative input"
   | a `mod` b == 0 = b
   | otherwise = gcd' b (a `mod` b)
 
--- 最小公倍数を求める
+-- | 最小公倍数を求める
 lcm' :: Int -> Int -> Int
 lcm' x y
   | x < 0 || y < 0 = error "lcm': negative input"

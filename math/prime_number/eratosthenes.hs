@@ -4,7 +4,7 @@ import Data.Vector.Unboxed.Mutable qualified as VUM
 
 type PrimeTable = VU.Vector Bool -- i番目の数字が素数かどうかをBoolで管理するtable
 
--- 素数のリストを返す
+-- | 素数のリストを返す
 primeTableToList :: PrimeTable -> [Int]
 primeTableToList t =
   [ i
@@ -12,13 +12,13 @@ primeTableToList t =
       t VU.! i
   ]
 
--- PrimeTableに入っていれば素数であると判定する。
+-- | PrimeTableに入っていれば素数であると判定する。
 isInPrimeTable :: PrimeTable -> Int -> Bool
 isInPrimeTable t n
   | 0 <= n && n < VU.length t = t VU.! n
   | otherwise = error "out of range"
 
--- 先頭の値iはかならす素数なので、iの倍数を生成して素数でないものを弾いていく。
+-- | 先頭の値iはかならす素数なので、iの倍数を生成して素数でないものを弾いていく。
 sieve :: Int -> PrimeTable
 sieve n = VU.create $ do
   vec <- VUM.replicate (n + 1) True

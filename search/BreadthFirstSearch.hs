@@ -6,11 +6,11 @@ import Data.List (foldl')
 
 type Graph = Map.Map Int [Int]
 
--- (頂点, 隣接頂点リスト)のリストからグラフを構築する。
+-- | (頂点, 隣接頂点リスト)のリストからグラフを構築する。
 buildGraph :: [(Int, [Int])] -> Graph
 buildGraph adjacency = Map.fromList adjacency
 
--- startから到達可能な頂点を幅優先で訪問し、訪問順のリストを返す。
+-- | startから到達可能な頂点を幅優先で訪問し、訪問順のリストを返す。
 -- depthFirstSearchFunc.hsと同じく「これから訪問する頂点のワークリスト」を引数に持つ単一再帰で実装する。
 -- 重複排除はポップ時のSet.memberチェックのみで行うため、同じ頂点がワークリストに複数回積まれうる。
 bfs :: Graph -> Int -> [Int]

@@ -1,4 +1,6 @@
--- 無限リストを使ったメモ化フィボナッチ
+{-# OPTIONS_GHC -Wno-x-partial #-}
+
+-- | 遅延評価を活かしたフィボナッチ
 fibs :: [Int]
 -- [0, 1]は初期値にする
 fibs = 0 : 1 : zipWith (+) fibs (tail fibs)

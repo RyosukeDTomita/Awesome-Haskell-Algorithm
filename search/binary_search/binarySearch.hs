@@ -2,7 +2,7 @@ import qualified Data.Vector as V
 import Data.List (sort)
 
 
--- targetを二分探索で探す
+-- | targetを二分探索で探す
 -- NOTE: 二分探索の各ステップでインデックスへのアクセスが必要であり、リストの`!!`はリストのデータ構造上O(n)であるため、O(1)でランダムアクセスできるData.Vectorを使用している。
 binarySearch :: V.Vector Int -> Int -> Int -> Int -> Bool
 binarySearch xs target left right

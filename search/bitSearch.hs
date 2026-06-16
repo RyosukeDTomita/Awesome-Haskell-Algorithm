@@ -1,6 +1,6 @@
 import Data.List (reverse, unfoldr)
 
--- 2進数変換して表示
+-- | 2進数変換して表示
 toBinary :: Int -> String
 toBinary 0 = "0"
 toBinary n = reverse $ unfoldr step n
@@ -11,16 +11,16 @@ toBinary n = reverse $ unfoldr step n
       let (q, r) = n `divMod` 2
        in Just (if r == 0 then '0' else '1', q)
 
--- xをnビット左シフトする。x * 2^nと同じで、bit列を上位方向へずらす。
+-- | xをnビット左シフトする。x * 2^nと同じで、bit列を上位方向へずらす。
 shiftL' :: Int -> Int -> Int
 shiftL' x n = x * (2 ^ n)
 
--- xのiビット目(0始まり)が1かどうかを判定する。
+-- | xのiビット目(0始まり)が1かどうかを判定する。
 -- iビット右に寄せて最下位ビットの偶奇を見ることで判定する。
 testBit' :: Int -> Int -> Bool
 testBit' x i = (x `div` (2 ^ i)) `mod` 2 == 1
 
--- n個の要素を持つ集合の部分集合をbit列(0..2^n-1)で全列挙する。
+-- | n個の要素を持つ集合の部分集合をbit列(0..2^n-1)で全列挙する。
 subSets :: [a] -> [[a]]
 subSets xs =
   [
@@ -34,7 +34,7 @@ subSets xs =
   where
     n = length xs
 
--- 部分集合の総和がtargetに一致するものを数えるbit全探索の例。
+-- | 部分集合の総和がtargetに一致するものを数えるbit全探索の例。
 countSubsetSum :: Int -> [Int] -> Int
 countSubsetSum target xs = length [
     s

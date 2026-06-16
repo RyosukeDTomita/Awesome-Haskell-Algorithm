@@ -6,15 +6,15 @@ import Debug.Trace (traceShowId)
 type Graph = Map.Map Int [Int]
 
 
--- (頂点, 隣接頂点リスト)のリストからグラフを構築する。
+-- | (頂点, 隣接頂点リスト)のリストからグラフを構築する。
 buildGraph :: [(Int, [Int])] -> Graph
 buildGraph adjacency = Map.fromList adjacency
 
--- startから到達可能な頂点を深さ優先で訪問し、訪問順のリストを返す。
+-- | startから到達可能な頂点を深さ優先で訪問し、訪問順のリストを返す。
 dfs :: Graph -> Int -> [Int]
 dfs graph start = snd $ visit graph Set.empty start
 
--- 頂点vを訪問する。
+-- | 頂点vを訪問する。
 -- visited: 訪問済みの頂点の集合
 visit :: Graph -> Set.Set Int -> Int -> (Set.Set Int, [Int])
 visit graph visited v

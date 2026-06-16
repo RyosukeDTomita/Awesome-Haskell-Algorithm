@@ -1,7 +1,7 @@
 -- 円周率piが3.14以上であることがわかるn角形をもとめる(多角形近似)
 import Text.Printf (printf)
 
--- n角形によるpiの近似
+-- | n角形によるpiの近似
 -- 半径 1 の円の円周は2 * pi
 -- 内接正 n 角形の周長はn * 2 * sin(pi / n)
 -- 2 * pi ≒ n * 2 * sin(pi / n)

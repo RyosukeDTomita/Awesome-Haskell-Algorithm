@@ -7,7 +7,7 @@ modulus :: Int64
 -- modulus = 10 ^ 9 + 7
 modulus = 1e9 + 7 -- NumDecimals拡張を使うとコンパイル時に1000000007に展開される。
 
--- 繰り返し二乗法による (n^k) mod modulus の計算
+-- | 繰り返し二乗法による (n^k) mod modulus の計算
 -- e.g. x^9の場合: x^2 = x * x
 -- x^4 = x^2 * x^2
 -- x^8 = x^4 * x^4

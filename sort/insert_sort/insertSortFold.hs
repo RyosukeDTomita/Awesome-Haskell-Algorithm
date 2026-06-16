@@ -1,3 +1,5 @@
+import Data.List (foldl')
+
 insertSort :: (Ord a) => [a] -> [a]
 insertSort xs = foldr insert [] xs
   where
@@ -7,7 +9,7 @@ insertSort xs = foldr insert [] xs
       | otherwise = y : insert x ys -- yとysの間にxは入れられることがわかったので、再帰してxを入れる適切な位置を探す。
 
 insertSort' :: (Ord a) => [a] -> [a]
-insertSort' xs = foldl (flip insert) [] xs -- flipは関数につけて引数の順序を逆にする
+insertSort' xs = foldl' (flip insert) [] xs -- flipは関数につけて引数の順序を逆にする
   where
     insert x [] = [x]
     insert x (y : ys) -- xをyとysの間に入れられるか調べる

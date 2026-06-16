@@ -1,4 +1,4 @@
--- フィボナッチ数列の計算（再帰定義）
+-- | フィボナッチ数列の計算（再帰定義）
 fibonacciNumber :: Int -> Int
 fibonacciNumber n
   | n == 0 = 0

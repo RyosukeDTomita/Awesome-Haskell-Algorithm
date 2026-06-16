@@ -3,11 +3,11 @@ import Data.Set qualified as Set
 
 type Graph = Map.Map Int [Int]
 
--- (頂点, 隣接頂点リスト)のリストからグラフを構築する。
+-- | (頂点, 隣接頂点リスト)のリストからグラフを構築する。
 buildGraph :: [(Int, [Int])] -> Graph
 buildGraph adjacency = Map.fromList adjacency
 
--- startから到達可能な頂点を深さ優先で訪問し、訪問順のリストを返す。
+-- | startから到達可能な頂点を深さ優先で訪問し、訪問順のリストを返す。
 -- depthFirstSearch.hsのvisit/stepによるタプル畳み込み版と異なり、「これから訪問する頂点のワークリスト」を引数に持つ単一再帰で実装する。
 dfs :: Graph -> Int -> [Int]
 dfs graph start = go Set.empty [start]
