@@ -16,7 +16,8 @@ A repository implementing basic algorithms in Haskell.
   - [Binary Search](./search/binary_search/)
   - [Binary Search Tree (BST)](./search/bst.hs)
   - [Bit Search](./search/bitSearch.hs)
-  - [Depth First Search](./search/depthFirstSearch.hs)
+  - [Depth First Search](./search/dfs/)
+  - [Breadth First Search](./search/BreadthFirstSearch.hs)
 - [Sort](./sort/README.md)
   - [Bubble Sort](./sort/bubbleSort.hs)
   - [Insertion Sort](./sort/insert_sort/)
@@ -27,8 +28,7 @@ A repository implementing basic algorithms in Haskell.
   - [Counting Sort](./sort/counting_sort/)
 - [Math](./math/README.md)
   - [Euclidean Algorithm](./math/euclidean.hs): GCD(Greatest Common Divisor), LCM(Least Common Multiple)
-  - [prime number](./math/prime_number/)
-    - 
+  - [prime number](./math/prime_number/): Eratosthenes
   - [Fermat's Little Theorem](./math/fermat.hs)
   - [Fibonacci](./math/fibonacci/)
   - [Pi Approximation](./math/pi.hs)
