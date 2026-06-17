@@ -8,8 +8,8 @@ primes = 2 : sieve [3, 5 ..] -- 2+奇数の無限配列
       p
         : sieve
           [ x
-            | x <- xs,
-              x `mod` p /= 0
+          | x <- xs,
+            x `mod` p /= 0
           ]
 
 main :: IO ()

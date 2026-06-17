@@ -8,8 +8,8 @@ type PrimeTable = VU.Vector Bool -- i番目の数字が素数かどうかをBool
 primeTableToList :: PrimeTable -> [Int]
 primeTableToList t =
   [ i
-    | i <- [0 .. VU.length t - 1],
-      t VU.! i
+  | i <- [0 .. VU.length t - 1],
+    t VU.! i
   ]
 
 -- | PrimeTableに入っていれば素数であると判定する。

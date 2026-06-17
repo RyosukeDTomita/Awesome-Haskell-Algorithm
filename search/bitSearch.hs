@@ -23,10 +23,8 @@ testBit' x i = (x `div` (2 ^ i)) `mod` 2 == 1
 -- | n個の要素を持つ集合の部分集合をbit列(0..2^n-1)で全列挙する。
 subSets :: [a] -> [[a]]
 subSets xs =
-  [
-    [
-      x
-      | (i, x) <- zip [0 ..] xs,
+  [ [ x
+    | (i, x) <- zip [0 ..] xs,
       testBit' bit i
     ]
   | bit <- [0 .. (1 `shiftL'` n) - 1] -- n = 3なら bit <- [0..7]
@@ -36,11 +34,12 @@ subSets xs =
 
 -- | 部分集合の総和がtargetに一致するものを数えるbit全探索の例。
 countSubsetSum :: Int -> [Int] -> Int
-countSubsetSum target xs = length [
-    s
+countSubsetSum target xs =
+  length
+    [ s
     | s <- subSets xs,
-    sum s == target
-  ]
+      sum s == target
+    ]
 
 main :: IO ()
 main = do

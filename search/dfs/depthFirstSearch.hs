@@ -1,10 +1,9 @@
+import Data.List (foldl')
 import Data.Map qualified as Map
 import Data.Set qualified as Set
-import Data.List (foldl')
 import Debug.Trace (traceShowId)
 
 type Graph = Map.Map Int [Int]
-
 
 -- | (頂点, 隣接頂点リスト)のリストからグラフを構築する。
 buildGraph :: [(Int, [Int])] -> Graph

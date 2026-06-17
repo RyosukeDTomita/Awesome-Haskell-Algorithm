@@ -1,5 +1,5 @@
-import Prelude hiding ((++))
 import Data.List (foldl')
+import Prelude hiding ((++))
 
 -- O(lenght xs)
 (++) :: [a] -> [a] -> [a]
@@ -44,15 +44,13 @@ length' xs = foldl' (\acc _ -> acc + 1) 0 xs
 
 main :: IO ()
 main = do
-  print ([] ++ [3..20])
-  print ([1,2] ++ [3..20]) -- O(2)
-  print ([1..20] ++ [21,22]) -- O(20)
-
-  print $ init' [1..20] -- O(20)
+  print ([] ++ [3 .. 20])
+  print ([1, 2] ++ [3 .. 20]) -- O(2)
+  print ([1 .. 20] ++ [21, 22]) -- O(20)
+  print $ init' [1 .. 20] -- O(20)
   print $ last' [1] -- O(20)
   print $ head' [1, 2, 3] -- O(1)
   print $ tail' [1, 2, 3] -- O(1)
+  print $ reverse [1 .. 20]
 
-  print $ reverse [1..20]
-
-  print $ length  [1..20] -- O(20)
+  print $ length [1 .. 20] -- O(20)

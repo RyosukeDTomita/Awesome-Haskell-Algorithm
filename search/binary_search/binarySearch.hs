@@ -1,6 +1,5 @@
-import qualified Data.Vector as V
 import Data.List (sort)
-
+import Data.Vector qualified as V
 
 -- | targetを二分探索で探す
 -- NOTE: 二分探索の各ステップでインデックスへのアクセスが必要であり、リストの`!!`はリストのデータ構造上O(n)であるため、O(1)でランダムアクセスできるData.Vectorを使用している。

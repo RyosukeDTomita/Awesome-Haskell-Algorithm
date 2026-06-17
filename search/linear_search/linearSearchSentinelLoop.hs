@@ -6,8 +6,8 @@ linearSearch xs target =
   let xs' = xs ++ [target] -- 番兵を追加
    in head
         [ i
-          | i <- [0 .. length xs' - 1],
-            xs' !! i == target
+        | i <- [0 .. length xs' - 1],
+          xs' !! i == target
         ]
 
 main :: IO ()

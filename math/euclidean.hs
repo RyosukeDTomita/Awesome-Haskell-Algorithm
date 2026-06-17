@@ -10,6 +10,7 @@ lcm' :: Int -> Int -> Int
 lcm' x y
   | x < 0 || y < 0 = error "lcm': negative input"
   | otherwise = x * y `quot` gcd' x y
+
 -- quotは整数の切り捨て除算
 
 main :: IO ()

@@ -1,8 +1,8 @@
+import Data.List (foldl')
 import Data.Map qualified as Map
 import Data.Sequence (Seq, (|>))
 import Data.Sequence qualified as Seq
 import Data.Set qualified as Set
-import Data.List (foldl')
 
 type Graph = Map.Map Int [Int]
 

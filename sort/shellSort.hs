@@ -9,7 +9,7 @@ shellSort xs = foldl sortGap xs gaps -- gapは大きい順で処理される
         takeWhile
           (< n)
           [ (3 ^ k + 1) `div` 2
-            | k <- [1 ..]
+          | k <- [1 ..]
           ]
     -- リストをgap個のグループに分けて挿入ソートを実施する。 [0 .. gap -1]は挿入ソートの開始位置を表す
     sortGap arr gap = foldl (sortGroup gap) arr [0 .. gap - 1]

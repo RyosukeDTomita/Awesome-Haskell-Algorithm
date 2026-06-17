@@ -4,8 +4,8 @@ linearSearch :: [Int] -> Int -> Int
 linearSearch xs target =
   head
     [ i
-      | i <- [0 .. length xs - 1],
-        xs !! i == target
+    | i <- [0 .. length xs - 1],
+      xs !! i == target
     ]
 
 main :: IO ()
