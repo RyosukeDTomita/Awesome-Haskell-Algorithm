@@ -22,7 +22,8 @@ dfs graph start = go Set.empty [start]
           let neighbors = Map.findWithDefault [] v graph
               -- 隣接頂点をスタックの先頭(LIFO)へ積むのが深さ優先。
               -- 末尾へ積めば幅優先(BreadthFirstSearch.hs)になる。
-           in v : go (Set.insert v visited) (neighbors ++ stack) -- 訪問済みを検証せずに無条件にpushすう
+              -- NOTE: neighbors ++ stackの場合、計算量はO(length neighbors)でそんなに大きくならないため、Data.Sequencesを使っていない。
+           in v : go (Set.insert v visited) (neighbors ++ stack) -- 訪問済みを検証せずに無条件にpushする
 
 main :: IO ()
 main = do
