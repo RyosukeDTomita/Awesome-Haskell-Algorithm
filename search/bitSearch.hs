@@ -25,7 +25,7 @@ subSets :: [a] -> [[a]]
 subSets xs =
   [ [ x
     | (i, x) <- zip [0 ..] xs,
-      testBit' bit i
+      testBit' bit i -- NOTE: 渡されるiは0スタートであることが前提
     ]
   | bit <- [0 .. (1 `shiftL'` n) - 1] -- n = 3なら bit <- [0..7]
   ]
@@ -45,7 +45,8 @@ main :: IO ()
 main = do
   print "-----shiftL-----"
   let x = 3
-  print $ toBinary 3
+  print $ toBinary x
+  print $ toBinary 7
   print $ toBinary $ shiftL' x 1
   print $ shiftL' x 1
   print $ toBinary $ shiftL' x 2
