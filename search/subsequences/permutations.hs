@@ -22,3 +22,4 @@ permutations' xs =
 main :: IO ()
 main = do
   print $ permutations' [1, 2, 3]
+  print $ permutations' [1, 1, 2]

@@ -18,6 +18,7 @@ A repository implementing basic algorithms in Haskell.
   - [Bit Search](./search/bitSearch.hs)
   - [Depth First Search](./search/dfs/)
   - [Breadth First Search](./search/BreadthFirstSearch.hs)
+  - [Subsequence](./search/subsequence)
 - [Sort](./sort/README.md)
   - [Bubble Sort](./sort/bubbleSort.hs)
   - [Insertion Sort](./sort/insert_sort/)

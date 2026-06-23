@@ -47,10 +47,6 @@
 
 ---
 
-## 順列全探索(Permutation search)
-
----
-
 ## 深さ優先探索(Depth First Search)
 
 - [dfs/](./dfs/)
