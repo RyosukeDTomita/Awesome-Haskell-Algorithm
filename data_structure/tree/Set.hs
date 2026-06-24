@@ -3,7 +3,7 @@
 data Set a
   = -- | 空
     Tip
-  | -- | 部分木に含まれる総数 このツリーの要素 左の枝 右の枝(左の枝の方が値が大きくなる)
+  | -- | 部分木に含まれる総数 このツリーの要素 左の枝 右の枝(右の枝の方が値が大きくなる)
     Bin Int a (Set a) (Set a)
   deriving (Show)
 
@@ -30,7 +30,7 @@ member _ Tip = False
 member x (Bin _ y l r)
   | x < y = member x l
   | x > y = member x r
-  | otherwise = True
+  | otherwise = True -- 発見
 
 -- | サイズを計算するBinスマートコンストラクタ(平衡が崩れていないときに使う)
 bin :: a -> Set a -> Set a -> Set a
