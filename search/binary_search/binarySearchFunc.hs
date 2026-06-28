@@ -10,4 +10,5 @@ binarySearch ok ng f
 
 main :: IO ()
 main = do
-  print $ binarySearch 0 100 (\x -> x ^ 2 <= 30) -- x^2 <= 30 を満たす最大の値xを0から100の範囲で求める
+  print $ binarySearch (-1) 100 (\x -> x ^ 2 <= 30) -- x^2 <= 30 を満たす最大の値xを0から100の範囲で求める
+  print $ binarySearch 100 (-1) (\x -> x ^ 2 > 30) -- x^2 > 30 を満たす最小の値xを0から100の範囲で求める
