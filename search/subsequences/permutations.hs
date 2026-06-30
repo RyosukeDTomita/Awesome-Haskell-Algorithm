@@ -1,11 +1,11 @@
 import Debug.Trace (traceShowId)
 
-permutations' :: (Show a) => [a] -> [[a]]
-permutations' [] = [[]]
-permutations' xs =
+permutations :: (Show a) => [a] -> [[a]]
+permutations [] = [[]]
+permutations xs =
   [ x : p
   | (x, rest) <- selections xs,
-    p <- permutations' rest -- 再帰でrestの中での並び替えを実施する
+    p <- permutations rest -- 再帰でrestの中での並び替えを実施する
   ]
   where
     -- \| 先頭に来る要素を1つ選び、残りをそのままの順で返す
@@ -21,5 +21,5 @@ permutations' xs =
 
 main :: IO ()
 main = do
-  print $ permutations' [1, 2, 3]
-  print $ permutations' [1, 1, 2]
+  print $ permutations [1, 2, 3]
+  print $ permutations [1, 1, 2]

@@ -5,7 +5,6 @@
 - [binary_search/binarySearch.hs](./binarySearch.hs)
 - 単純な二分探索を使い、値の存在するかを探す
 
-
 ## めぐる式二分探索
 
 - [binary_search/binarySearchMeguru.hs](./binarySearchMeguru.hs)

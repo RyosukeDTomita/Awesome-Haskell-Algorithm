@@ -3,12 +3,12 @@
 -- | 直積(同じ集合をk回かける)
 -- 各位置で独立にxsから1つ選ぶので、結果は |xs|^k 通り。
 cartesianPower :: Int -> [a] -> [[a]]
-cartesianPower k xs = replicateM' k xs
+cartesianPower k xs = replicateM k xs
 
 -- [1,2,3]の場合 2
--- replicateM' 2 [1,2,3]
--- = (:) <$> [1,2,3] <*> replicateM' 1 [1,2,3]
--- = (:) <$> [1,2,3] <*> (:) <$> [1,2,3] <*> replicateM' 0 [1,2,3]
+-- replicateM 2 [1,2,3]
+-- = (:) <$> [1,2,3] <*> replicateM 1 [1,2,3]
+-- = (:) <$> [1,2,3] <*> (:) <$> [1,2,3] <*> replicateM 0 [1,2,3]
 -- = (:) <$> [1,2,3] <*> (:) <$> [1,2,3] <*> pure []
 -- = (:) <$> [1,2,3] <*> [[1],[2],[3]]
 -- = [[1,1],[1,2],[1,3],[2,1],[2,2],[2,3],[3,1],[3,2],[3,3]]
@@ -30,13 +30,13 @@ cartesianPower k xs = replicateM' k xs
 -- (:) <$> [1,2,3] <*> [[1],[2],[3]]の場合は
 -- = [f x | f <- [ (1:), (2:), (3:) ] x <- [[1],[2],[3]]]
 -- = [[1,1],[1,2],[1,3],[2,1],[2,2],[2,3],[3,1],[3,2],[3,3]]
-replicateM' :: (Applicative m) => Int -> m a -> m [a]
-replicateM' 0 _ = pure [] -- listのApplicativeでは [[]]
-replicateM' k m = (:) <$> m <*> replicateM' (k - 1) m -- この位置の選択肢を残りk-1個の直積に連結
+replicateM :: (Applicative m) => Int -> m a -> m [a]
+replicateM 0 _ = pure [] -- listのApplicativeでは [[]]
+replicateM k m = (:) <$> m <*> replicateM (k - 1) m -- この位置の選択肢を残りk-1個の直積に連結
 
 main :: IO ()
 main = do
-  -- 自前のreplicateM'が標準ライブラリのreplicateMと一致することを確認
+  -- 自前のreplicateMが標準ライブラリのreplicateMと一致することを確認
   print $ cartesianPower 2 [1, 2, 3] -- [[1,1],[1,2],[1,3],[2,1],[2,2],[2,3],[3,1],[3,2],[3,3]]
 
   -- bit全探索(各ビットを0/1から選ぶ)も直積の典型例

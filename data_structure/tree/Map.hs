@@ -4,8 +4,8 @@ import Prelude hiding (lookup) -- 自前のlookupとPrelude.lookupの衝突を�
 -- Binにサイズを格納するのは、平衡条件(size l, size r)をO(1)で判定するため
 -- 平衡の仕組みはSetと同じで、キーを使って平衡をとっている
 data Map k a
- -- | 部分木に含まれる総数 このツリーのキー このツリーのvalue 左の枝 右の枝(右の枝の方が値が大きくなる)
-  = Bin Size k a (Map k a) (Map k a)
+  = -- | 部分木に含まれる総数 このツリーのキー このツリーのvalue 左の枝 右の枝(右の枝の方が値が大きくなる)
+    Bin Size k a (Map k a) (Map k a)
   | Tip -- 空
   deriving (Show)
 
@@ -214,7 +214,7 @@ main = do
   print $ size (empty :: Map String Int) -- 0
   putStrLn "-- member / lookup / find --"
   print $ member "Alice" t -- True
-  print $ member "Zoe" t  -- False
+  print $ member "Zoe" t -- False
   print $ lookup "Alice" t -- Just 28
   print $ lookup "Zoe" t -- Nothing
   print (find "Alice" t) -- 28
@@ -222,7 +222,7 @@ main = do
   let t' = insert "Alice" 99 t
   prettyPrint t'
   putStrLn "-- insertWith (既存キーは新旧の値を合成) --"
-  let t''  = insertWith (+) "Alice" 1 t' -- Just 29 (28 + 1)
+  let t'' = insertWith (+) "Alice" 1 t' -- Just 29 (28 + 1)
   let t''' = insertWith (+) "Zoe" 1 t'' -- Just 1 (新規)
   prettyPrint t'''
   putStrLn "-- delete --"

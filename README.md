@@ -33,6 +33,7 @@ A repository implementing basic algorithms in Haskell.
   - [Fermat's Little Theorem](./math/fermat.hs)
   - [Fibonacci](./math/fibonacci/)
   - [Pi Approximation](./math/pi.hs)
+  - [base N](./math/baseN.hs)
 
 ### Paper Implmentation
 

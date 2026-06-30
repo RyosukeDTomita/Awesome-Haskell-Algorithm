@@ -67,9 +67,9 @@
 
 - [cartesianProduct.hs](./cartesianProduct.hs)
 - 各位置で独立に集合から1つ選ぶ。位置(集合)が固定で、同じ値を集合をまたいで選んでよいのが特徴。
-- 標準ライブラリでは`Control.Monad.replicateM`で書けるが、ここでは自前の`replicateM'`で実装した。
+- 標準ライブラリでは`Control.Monad.replicateM`で書けるが、ここでは同名で自前実装した。
 - `replicateM`の正体はリストモナドのbind(`xs >>= f = concatMap f xs`、`return x = [x]`)の繰り返しで、リスト内包表記と等価。
-  - `replicateM' k xs = [ x:rest | x <- xs, rest <- replicateM' (k-1) xs ]`
+  - `replicateM k xs = [ x:rest | x <- xs, rest <- replicateM (k-1) xs ]`
 - `cartesianPower 2 [1,2,3]` -> `[[1,1],[1,2],[1,3],[2,1],[2,2],[2,3],[3,1],[3,2],[3,3]]`(|xs|^k 通り)
 - `cartesianPower 3 [0,1]` -> bit全探索(各ビットを0/1から選ぶ)に相当。
 
