@@ -7,6 +7,7 @@ A repository implementing basic algorithms in Haskell.
 ## ToC
 
 - [Data Structure](./data_structure/README.md)
+  - [single linked list](./data_structure/list.hs)
   - [Stack](./data_structure/stack_/)
   - [Hash Table](./data_structure/hash/)
   - [Tree](./data_structure/tree/)
@@ -18,7 +19,7 @@ A repository implementing basic algorithms in Haskell.
   - [Bit Search](./search/bitSearch.hs)
   - [Depth First Search](./search/dfs/)
   - [Breadth First Search](./search/BreadthFirstSearch.hs)
-  - [Subsequence](./search/subsequence)
+  - [Subsequence](./search/subsequences)
 - [Sort](./sort/README.md)
   - [Bubble Sort](./sort/bubbleSort.hs)
   - [Insertion Sort](./sort/insert_sort/)
