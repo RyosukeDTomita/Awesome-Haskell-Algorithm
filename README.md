@@ -35,6 +35,8 @@ A repository implementing basic algorithms in Haskell.
   - [Fibonacci](./math/fibonacci/)
   - [Pi Approximation](./math/pi.hs)
   - [base N](./math/baseN.hs)
+- [Compression](./compression/README.md)
+  - [Run Length Encoding](./compression/rle.hs)
 
 ### Paper Implmentation
 
