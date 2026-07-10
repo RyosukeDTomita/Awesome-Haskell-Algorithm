@@ -22,13 +22,18 @@ group [] = []
 group (x : xs) = (x : ys) : group zs
   where
     (ys, zs) = go x xs
-    -- | 同じ要素がでる限り
+    -- \| 同じ要素がでなくなるまで取得し、そこでリストを分割する
+    -- NOTE: span (==x) xsを手書きしたもの
+    -- span (==1) [1,2,3]
+    -- ([1],[2,3])
+    -- span (==2) [1,2,3]
+    -- ([], [1,2,3])
     go :: a -> [a] -> ([a], [a])
     go _ [] = ([], [])
     go c ds@(d : ds')
       | c == d =
-        let (ys', zs') = go c ds'
-        in (d : ys', zs')
+          let (ys', zs') = go c ds'
+           in (d : ys', zs')
       | otherwise = ([], ds)
 
 -- | ランレングス圧縮: 連続して現れる要素を(要素, 出現回数)のペアに変換する。

@@ -1,0 +1,19 @@
+name: CI
+
+on:
+  push:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@v16
+
+      - name: Check formatting
+        run: nix develop --command treefmt --ci
+
+      - name: Compile and run all Haskell files
+        run: nix develop --command ./check.sh

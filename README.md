@@ -54,6 +54,15 @@ In detail, see [flake.nix](./flake.nix).
 
 ---
 
+## CI
+
+GitHub Actions runs on every push (see [ci.yml](./.github/workflows/ci.yml)):
+
+- `treefmt --ci`: check formatting (ormolu, nixfmt, mdformat).
+- [check.sh](./check.sh): compile all `*.hs` files with `ghc -Wall` and run them. Build artifacts go to a temporary directory, so nothing is left in the repository. You can also run it locally: `nix develop --command ./check.sh`
+
+---
+
 ## Reference
 
 - [Why Haskell matters](https://wiki.haskell.org/Why_Haskell_matters)

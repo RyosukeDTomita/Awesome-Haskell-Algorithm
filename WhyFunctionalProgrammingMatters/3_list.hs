@@ -47,7 +47,7 @@ doubleall'' xs = map' double xs
     double n = 2 * n
 
 -- 2次元配列を全部足す
-sumMatrix :: [[a]] -> a
+sumMatrix :: (Num a) => [[a]] -> a
 sumMatrix xxs = (sum . map sum) xxs
 
 main :: IO ()
