@@ -32,13 +32,24 @@ member x (Bin _ y l r)
   | x > y = member x r
   | otherwise = True -- 発見
 
+-- | 昇順で0-indexed i番目の要素を取得するO(log n)。
+-- 各ノードが部分木のサイズを持っているため、左の枝のサイズと比較するだけで進む方向がわかる
+elemAt :: Int -> Set a -> a
+elemAt _ Tip = error "Set.elemAt: index out of range"
+elemAt i (Bin _ x l r)
+  | i < sl = elemAt i l
+  | i > sl = elemAt (i - sl - 1) r -- iからsl分引いたのがrの先頭からの要素番号
+  | otherwise = x
+  where
+    sl = size l
+
 -- | サイズを計算するBinスマートコンストラクタ(平衡が崩れていないときに使う)
 bin :: a -> Set a -> Set a -> Set a
 bin x l r = Bin (1 + size l + size r) x l r
 
 -- | 昇順リスト化(差分蓄積でO(n))
-members :: Set a -> [a]
-members t = go t []
+toList :: Set a -> [a]
+toList t = go t []
   where
     go Tip acc = acc
     go (Bin _ x l r) acc = go l (x : go r acc)
@@ -175,20 +186,22 @@ main :: IO ()
 main = do
   putStrLn "-- 構築 --"
   let t = foldr insert empty [5, 3, 8, 1, 4, 7, 9, 2, 6] :: Set Int
-  print (members t) -- [1..9]
+  print (toList t) -- [1..9]
   print (size t) -- 9
   prettyPrint t
   putStrLn "-- singleton / empty --"
-  print (members (singleton 'x')) -- "x"
+  print (toList (singleton 'x')) -- "x"
   print (size (empty :: Set Int)) -- 0
   putStrLn "-- member --"
   print (member 4 t, member 42 t) -- (True,False)
+  putStrLn "-- elemAt --"
+  print (elemAt 0 t, elemAt 8 t) -- (1,9)
   putStrLn "-- insert / delete --"
   let t' = insert 10 t
-  print (members t') -- [1..10]
+  print (toList t') -- [1..10]
   prettyPrint t'
   let t'' = delete 5 t
-  print (members t'') -- [1,2,3,4,6,7,8,9]
+  print (toList t'') -- [1,2,3,4,6,7,8,9]
   prettyPrint t''
   putStrLn "-- 平衡確認: 昇順挿入でも木が偏らない --"
   let sorted = foldr insert empty [1 .. 15] :: Set Int
