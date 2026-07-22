@@ -10,10 +10,14 @@
 
 ---
 
-## 双方向連結リスト(linked list)
+## 双方向連結リスト(double linked list)
 
+- 各データが前後のデータへの参照情報としてリンク(ポインタ)を持つデータ構造。
 - Haskellに直接該当するデータ構造はない。
-- 各データが次のデータのへの参照情報としてリンク(ポインタ)を持つデータ構造。
+- [doublyLinkedList.hs](./doublyLinkedList.hs)
+  - `Data.Vector.Unboxed.Mutable`のprev/next配列(添字ベースのポインタ)で実装。
+  - データを持つための`dlValue`、i番目の前の要素のindex番号を持つための`dlPrev`、i番目の次の要素のindex番号を持つための`dlNext`の3つのVUMを使って実装している。
+  - indexを指定しての挿入・削除はO(1)
 
 ---
 
