@@ -1,6 +1,7 @@
 ![icon](./assets/icon-haskell.png)
 
 ![mit license](https://img.shields.io/github/license/RyosukeDTomita/Awesome-Haskell-Algorithm)
+![compile check](https://github.com/RyosukeDTomita/Awesome-Haskell-Algorithm/actions/workflows/ci.yml/badge.svg?job=compile)
 
 A repository implementing basic algorithms in Haskell.
 

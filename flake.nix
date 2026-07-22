@@ -3,6 +3,8 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    # GitHub Actions メンテ用ツール(ghalint 等)は新しい nixpkgs から取る。
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
     treefmt-nix.url = "github:numtide/treefmt-nix";
   };
@@ -11,6 +13,7 @@
     {
       self,
       nixpkgs,
+      nixpkgs-unstable,
       flake-utils,
       treefmt-nix,
     }:
@@ -18,6 +21,7 @@
       system:
       let
         pkgs = import nixpkgs { inherit system; };
+        unstablePkgs = import nixpkgs-unstable { inherit system; };
         treefmtEval = treefmt-nix.lib.evalModule pkgs ./treefmt.nix;
       in
       {
@@ -35,6 +39,9 @@
               ps.hashable
             ]))
             pkgs.haskell.packages.ghc9122.haskell-language-server
+            # GitHub Actions のメンテ用ツール(配布物には含まれない)。
+            unstablePkgs.pinact
+            unstablePkgs.ghalint
           ];
         };
       }
