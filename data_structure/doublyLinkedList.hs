@@ -3,6 +3,7 @@
 -- 値本体はvalueArrに保持する。
 -- 前後のノードの添字を書き換えるだけなので、挿入・削除は挿入/削除位置さえ分かればO(1)で行える
 {-# OPTIONS_GHC -Wunused-imports #-}
+
 import Control.Monad (forM_)
 import Control.Monad.ST (ST, runST)
 import Data.Vector.Unboxed.Mutable qualified as VUM

@@ -10,7 +10,7 @@
 
 ---
 
-## 双方向連結リスト(double linked list)
+## 双方向連結リスト(doubly linked list)
 
 - 各データが前後のデータへの参照情報としてリンク(ポインタ)を持つデータ構造。
 - Haskellに直接該当するデータ構造はない。
@@ -25,20 +25,22 @@
 
 - Last In First Out でデータを取り出す構造
 - 逆ポーランド記法(Reverse Polish Notation)の計算に利用される。
-- Haskellのリストは単方向連結リストとして実装されているためスタックといって差し支えない。
+- Haskellのリストは単方向連結リストとして実装されているため、O(1)で先頭への要素追加及び、先頭要素の取得が可能であるため、スタックとして使える。
 - 応用例(逆ポーランド記法)を実装している。[rpn.hs](./stack_/rpn.hs)
 
 ---
 
 ## キュー(Queue)
 
-- First in First Out でデータを取り出す。
+- First in First Outでデータを取り出す。
 - キューにデータを入れることを enqueque,データを取り出すことを dequeue という。
+- TODO
 
 ### リングバッファ(Ring Buffer)
 
 - リングバッファ: 記憶領域がリング状になったもの。
 - 配列を取り出す index と配列を入れる index を定義し，これらは配列の長さで割った余りを使って実装する。 --> 割り算によって円形の配列を実現している。
+- TODO
 
 ---
 
@@ -55,7 +57,4 @@
 
 ## ツリー(Tree)
 
-- [tree](./tree)
-
-> [!NOTE] BST(Binary Search Tree)
-> [../search/bst.hs](../search/bst.hs)に二分木探索を実装した。
+- [tree](./tree/README.md)を参照
