@@ -27,8 +27,8 @@ bfs graph start = go Set.empty (Seq.singleton start)
               -- 隣接頂点をキュー末尾(FIFO)へ積む
               -- 先頭へ積めば深さ優先(depthFirstSearchFunc.hs)になる。
               -- NOTE: Listの++で連結すると計算量がO(length rest)になり、dfsと比べてコストがかさむため、Data.Sequencesを使い、O(1)で連結している
-              queue' = foldl' (|>) rest neighbors
-           in v : go (Set.insert v visited) queue'
+              queue = foldl' (|>) rest neighbors
+           in v : go (Set.insert v visited) queue
 
 main :: IO ()
 main = do

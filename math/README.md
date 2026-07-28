@@ -34,3 +34,11 @@ a * a^(p-2) ≡ 1 (mod p) となり、a^(p-2) が a の法的逆元となる。
 - [baseN.hs](./baseN.hs)
 - 10進数からn進数に変換: `foldl'`で畳み込む
 - n進数から10進数に戻す: `unfoldr`で展開
+
+---
+
+## ニュートン法
+
+平方根をニュートンラフソン法で求めるアルゴリズムは別ディレクトリに実装済み。
+
+[4_1newtonRoot.hs](../WhyFunctionalProgrammingMatters/4_1newtonRoot.hs)

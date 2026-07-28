@@ -1,9 +1,9 @@
+{-# LANGUAGE OverloadedRecordDot #-}
 -- 双方向連結リスト(Doubly Linked List)
 -- 添字ベースのprev/next配列で表現する。添字0を先頭番兵、添字(capacity+1)を末尾番兵とする。
 -- 値本体はvalueArrに保持する。
 -- 前後のノードの添字を書き換えるだけなので、挿入・削除は挿入/削除位置さえ分かればO(1)で行える
 {-# LANGUAGE NoFieldSelectors #-}
-{-# LANGUAGE OverloadedRecordDot #-}
 {-# OPTIONS_GHC -Wunused-imports #-}
 
 import Control.Monad (forM_)

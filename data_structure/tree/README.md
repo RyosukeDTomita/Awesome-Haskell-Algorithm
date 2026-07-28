@@ -15,6 +15,8 @@
 
 ## finger tree (Seq)
 
+- [finger tree](./fingerTrees/README.md)
+
 ---
 
 ## 一般的な二分木
