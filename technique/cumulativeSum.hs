@@ -1,6 +1,7 @@
-{-# OPTIONS_GHC -Wunused-imports #-}
 {-# LANGUAGE BangPatterns #-}
 {-# LANGUAGE MonoLocalBinds #-}
+{-# OPTIONS_GHC -Wunused-imports #-}
+
 import Data.Vector.Unboxed qualified as VU
 import Prelude hiding (scanl)
 
@@ -9,7 +10,6 @@ import Prelude hiding (scanl)
 scanl :: (b -> a -> b) -> b -> [a] -> [b]
 scanl _ acc [] = [acc]
 scanl f acc (x : xs) = acc : scanl f (f acc x) xs
-
 
 -- | 累積和sから半開区間[l, r)の和を求める(0-index)
 -- (もとのリストでいうと、x_lからx_(r-1)までの和)
