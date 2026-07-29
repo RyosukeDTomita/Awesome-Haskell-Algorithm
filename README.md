@@ -38,6 +38,8 @@ A repository implementing basic algorithms in Haskell.
   - [base N](./math/baseN.hs)
 - [Compression](./compression/README.md)
   - [Run Length Encoding](./compression/rle.hs)
+- [Technique](./technique/README.md)
+  - [Cumulative Sum](./technique/cumulativeSum.hs): prefix sum, range sum query in O(1)
 
 ### Paper Implmentation
 
