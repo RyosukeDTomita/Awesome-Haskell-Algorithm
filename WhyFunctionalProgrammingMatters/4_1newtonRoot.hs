@@ -1,4 +1,5 @@
 -- https://www.sampou.org/haskell/article/whyfp.html
+
 -- | 近似を1つ進める関数
 -- nの平方根を求めるためはf x = x^2 - nにおいてf x == 0となるxの値を求めれば良い。
 -- そこで、点A(a,a^2 - n)を通る接線を求めるとこれはy = 2ax - a^2 - nになり、これのx軸との交点のx座標はy=0とすると

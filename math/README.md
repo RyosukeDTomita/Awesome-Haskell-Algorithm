@@ -39,5 +39,5 @@ a * a^(p-2) ≡ 1 (mod p) となり、a^(p-2) が a の法的逆元となる。
 
 ## ニュートン法
 
-- [4_1newtonRoot.hs](../WhyFunctionalProgrammingMatters/4_1newtonRoot.hs) 
+- [4_1newtonRoot.hs](../WhyFunctionalProgrammingMatters/4_1newtonRoot.hs)
 - [ニュートン法の理論](https://manabitimes.jp/math/733)
