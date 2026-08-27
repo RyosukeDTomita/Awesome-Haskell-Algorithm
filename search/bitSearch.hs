@@ -11,11 +11,11 @@ toBinary n = reverse $ unfoldr step n
       let (q, r) = n `divMod` 2
        in Just (if r == 0 then '0' else '1', q)
 
--- | xをnビット左シフトする。x * 2^nと同じで、bit列を上位方向へずらす。
+-- | (Data.Bits) xをnビット左シフトする。x * 2^nと同じで、bit列を上位方向へずらす。
 shiftL :: Int -> Int -> Int
 shiftL x n = x * (2 ^ n)
 
--- | xのiビット目(0始まり)が1かどうかを判定する。
+-- | (Data.Bits) xのiビット目(0始まり)が1かどうかを判定する。
 -- iビット右に寄せて最下位ビットの偶奇を見ることで判定する。
 testBit :: Int -> Int -> Bool
 testBit x i = (x `div` (2 ^ i)) `mod` 2 == 1
