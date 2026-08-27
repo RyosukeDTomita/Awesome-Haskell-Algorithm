@@ -36,7 +36,7 @@ A repository implementing basic algorithms in Haskell.
   - [Fibonacci](./math/fibonacci/)
   - [Pi Approximation](./math/pi.hs)
   - [base N](./math/baseN.hs)
-  - [Newton's Method](./math/newton.hs): square root by Newton-Raphson
+  - [Newton's Method](./WhyFunctionalProgrammingMatters/4_1newtonRoot.hs): square root by Newton-Raphson
 - [Compression](./compression/README.md)
   - [Run Length Encoding](./compression/rle.hs)
 - [Technique](./technique/README.md)
