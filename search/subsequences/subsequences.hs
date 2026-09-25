@@ -1,5 +1,6 @@
 {-# OPTIONS_GHC -Wunused-imports #-}
 
+import Control.Monad (filterM)
 import Data.Bits (shiftL, testBit)
 
 -- | 部分列(再帰版)
@@ -44,9 +45,18 @@ subsequences' xs =
   where
     n = length xs
 
+-- | 部分列(filterM版)
+-- リストモナドの非決定性を使い、各要素について「入れない/入れる」の全パターンを列挙する。
+-- filterMは述語が返したリストの全分岐を列挙するので、2^n通りの部分列が得られる。
+-- 末尾の要素から分岐が変わるため、列挙順は再帰版のsubsequencesと異なる。
+subsequences'' :: [a] -> [[a]]
+subsequences'' xs = filterM (\_ -> [False, True]) xs
+
 main :: IO ()
 main = do
-  print $ subsequences [1, 2, 3]
-  print $ subsequences [1, 1, 2]
-  print $ subsequences' [1, 2, 3]
-  print $ subsequences' [1, 1, 2]
+  print $ subsequences [1, 2, 3] -- [[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]
+  print $ subsequences [1, 1, 2] -- [[],[1],[1],[1,1],[2],[1,2],[1,2],[1,1,2]]
+  print $ subsequences' [1, 2, 3] -- [[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]
+  print $ subsequences' [1, 1, 2] -- [[],[1],[1],[1,1],[2],[1,2],[1,2],[1,1,2]]
+  print $ subsequences'' [1, 2, 3] -- [],[3],[2],[2,3],[1],[1,3],[1,2],[1,2,3]]
+  print $ subsequences'' [1, 1, 2] -- [[],[2],[1],[1,2],[1],[1,2],[1,1],[1,1,2]]
